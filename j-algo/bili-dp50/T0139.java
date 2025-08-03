@@ -1,0 +1,53 @@
+package lzy.j;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ * brief: 139.单词拆分
+ * <a href="https://leetcode.cn/problems/word-break/description/">...</a>
+ * Created by lzy on 2025-08-03.
+ */
+public class T0139 {
+    public static void main(String[] args) {
+        String s = "leetcode";
+        List<String> wordDict = List.of("leet", "code");
+        boolean b = new T0139().wordBreak(s, wordDict);
+        assertTrue(b);
+
+    }
+
+    private boolean wordBreak(String s, List<String> wordDict) {
+        int n = s.length();
+        //int m = wordDict.size();
+        int l = 0;
+        boolean[] dp = new boolean[n + 1];     // 通过字符串列表拼接出前i个字符串，则dp[i] 为true
+        dp[0] = true;
+        for(int i = 1; i<= n; i++) {           // s中前i个字符构成的字符串和
+            for (String word: wordDict) {
+                l = word.length();             // 取每一个字符串和s进行后缀匹配
+                if (l > i) {                   // wordDict中字符串长度比 s的i前缀还长
+                    continue;
+                }
+                if (i != l && !dp[i-l]) {      // 前i-l字符无法通过字典匹配出来
+                    continue;
+                }
+
+                //int start = i - l;
+                int k;
+                for (k = 0; k < l; k++) {
+                    //if (s.charAt(start + k) != word.charAt(k)) {
+                    if (s.charAt(i - l + k) != word.charAt(k)) {
+                        break;
+                    }
+                }
+                if (k == l) {                 // 说明匹配上了
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[n];
+    }
+}
