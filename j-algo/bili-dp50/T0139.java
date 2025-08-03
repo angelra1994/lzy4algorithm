@@ -2,6 +2,7 @@ package lzy.j;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -11,11 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class T0139 {
     public static void main(String[] args) {
-        String s = "leetcode";
-        List<String> wordDict = List.of("leet", "code");
-        boolean b = new T0139().wordBreak(s, wordDict);
-        assertTrue(b);
+        T0139 t = new T0139();
 
+        assertTrue(t.wordBreak("leetcode", List.of("leet", "code")));
+        assertTrue(t.wordBreak("applepenapple", List.of("apple", "pen")));
+        assertFalse(t.wordBreak("catsandog", List.of("cats", "dog", "sand", "and", "cat")));
     }
 
     private boolean wordBreak(String s, List<String> wordDict) {
