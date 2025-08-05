@@ -1,5 +1,3 @@
-package t02_2pointers;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**

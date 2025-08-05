@@ -1,5 +1,3 @@
-package t02_2pointers;
-
 import java.util.LinkedList;
 import java.util.Queue;
 

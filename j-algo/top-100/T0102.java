@@ -1,7 +1,3 @@
-package t08_binarytree;
-
-import t02_2pointers.TreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

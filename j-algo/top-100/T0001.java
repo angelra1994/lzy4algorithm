@@ -1,5 +1,3 @@
-package t01_hash;
-
 import java.util.HashMap;
 import java.util.Map;
 
