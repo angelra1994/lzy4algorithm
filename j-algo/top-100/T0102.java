@@ -14,10 +14,10 @@ public class T0102 {
     public static void main(String[] args) {
         T0102 t = new T0102();
 
-        TreeNode root = TreeNode.buildTreeInLevelOrder(new int[]{3, 9, 20, -1, -1, 15, 7});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{3, 9, 20, -1, -1, 15, 7});
         assertEquals(3, t.levelOrder(root).size());
 
-        root = TreeNode.buildTreeInLevelOrder(new int[]{});
+        root = TreeNode.buildTreeLevelOrder(new int[]{});
         assertEquals(0, t.levelOrder(root).size());
 
     }

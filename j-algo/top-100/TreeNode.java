@@ -19,7 +19,8 @@ public class TreeNode {
         this.right = right;
     }
 
-    public static TreeNode buildTreeInLevelOrder(int[] levelOrder) {
+    // 满足一定条件才可以通过数组生成二叉树
+    public static TreeNode buildTreeLevelOrder(int[] levelOrder) {
         if (levelOrder == null || levelOrder.length == 0 || levelOrder[0] == -1) {
             return null;
         }
@@ -50,4 +51,20 @@ public class TreeNode {
         }
         return root;
     }
+
+    // 满足一定条件才可以通过数组生成二叉树。左根右
+    public static TreeNode buildTreeInOrder(int[] order, int[] startIndex) {
+        if (order == null || startIndex[0] >= order.length || order[startIndex[0]] == -1) {
+            startIndex[0]++;
+            return null;
+        }
+        TreeNode root = new TreeNode(order[startIndex[0] + 1]);
+        root.left = buildTreeInOrder(order, startIndex);
+
+//        startIndex[0] = startIndex[0] +2 ;  // 使用包装数组来模拟引用传递，避免使用类级别变量
+//        root.right = buildTreeInOrder(order, startIndex);
+        return root;
+
+    }
+
 }

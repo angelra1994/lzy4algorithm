@@ -12,25 +12,25 @@ public class T0337 {
     public static void main(String[] args) {
         T0337 t = new T0337();
 
-        TreeNode root = t.buildTreeInPreOrder(new int[]{3, 2, 3, -1, 3, -1, 1}, new int[]{0});
+        TreeNode root = t.buildTreePreOrder(new int[]{3, 2, 3, -1, 3, -1, 1}, new int[]{0});
         System.out.println("inorder:");
-        t.printTreeInPreorder(root);
+        t.printTreePreorder(root);
         System.out.println();
 
-        root = t.buildTreeInLevelOrder(new int[]{3, 2, 3, -1, 3, -1, 1});
+        root = t.buildTreeLevelOrder(new int[]{3, 2, 3, -1, 3, -1, 1});
         System.out.println("levelOrder");
-        t.printTreeInLevelOrder(root);
+        t.printTreeLevelOrder(root);
         System.out.println();
         assertEquals(7, t.rob(root));
 
-        root = t.buildTreeInPreOrder(new int[]{3, 4, 5, 1, 3, -1, 1}, new int[]{0});
+        root = t.buildTreePreOrder(new int[]{3, 4, 5, 1, 3, -1, 1}, new int[]{0});
         System.out.println("inorder:");
-        t.printTreeInPreorder(root);
+        t.printTreePreorder(root);
         System.out.println();
 
-        root = t.buildTreeInLevelOrder(new int[]{3, 4, 5, 1, 3, -1, 1});
+        root = t.buildTreeLevelOrder(new int[]{3, 4, 5, 1, 3, -1, 1});
         System.out.println("levelOrder");
-        t.printTreeInLevelOrder(root);
+        t.printTreeLevelOrder(root);
         System.out.println();
         assertEquals(9, t.rob(root));
 
@@ -72,28 +72,28 @@ public class T0337 {
     }
 
     // 先序遍历方式生成一颗树
-    private TreeNode buildTreeInPreOrder(int[] preOrder, int[] index) {
+    private TreeNode buildTreePreOrder(int[] preOrder, int[] index) {
         if (preOrder == null || index[0] >= preOrder.length || preOrder[index[0]] == -1) {
             index[0]++;
             return null;
         }
         TreeNode root = new TreeNode(preOrder[index[0]]);
         index[0]++;  // 使用包装数组来模拟引用传递，避免使用类级别变量
-        root.left = buildTreeInPreOrder(preOrder, index);
-        root.right = buildTreeInPreOrder(preOrder, index);
+        root.left = buildTreePreOrder(preOrder, index);
+        root.right = buildTreePreOrder(preOrder, index);
         return root;
     }
 
-    private void printTreeInPreorder(TreeNode root) {
+    private void printTreePreorder(TreeNode root) {
         if (root == null) {
             return;
         }
         System.out.print(root.val + " ");
-        printTreeInPreorder(root.left);
-        printTreeInPreorder(root.right);
+        printTreePreorder(root.left);
+        printTreePreorder(root.right);
     }
 
-    private TreeNode buildTreeInLevelOrder(int[] levelOrder) {
+    private TreeNode buildTreeLevelOrder(int[] levelOrder) {
         if (levelOrder == null || levelOrder.length == 0 || levelOrder[0] == -1) {
             return null;
         }
@@ -126,7 +126,7 @@ public class T0337 {
     }
 
     // BFS: queue 利用队列先入先出的特性
-    private void printTreeInLevelOrder(TreeNode root) {
+    private void printTreeLevelOrder(TreeNode root) {
         if (root == null) {
             return;
         }
