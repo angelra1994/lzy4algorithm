@@ -21,7 +21,7 @@ public class TreeNode {
 
     // 满足一定条件才可以通过数组生成二叉树
     public static TreeNode buildTreeLevelOrder(int[] levelOrder) {
-        if (levelOrder == null || levelOrder.length == 0 || levelOrder[0] == -1) {
+        if (levelOrder == null || levelOrder.length == 0 || levelOrder[0] == Integer.MIN_VALUE) {
             return null;
         }
 
@@ -33,7 +33,7 @@ public class TreeNode {
             TreeNode node = q.poll();
             // 处理左子节点
             if (i < levelOrder.length) {
-                if (levelOrder[i] != -1) {
+                if (levelOrder[i] != Integer.MIN_VALUE) {
                     node.left = new TreeNode(levelOrder[i]);
                     q.offer(node.left);
                 }
@@ -42,7 +42,7 @@ public class TreeNode {
 
             // 处理右子节点
             if (i < levelOrder.length) {
-                if (levelOrder[i] != -1) {
+                if (levelOrder[i] != Integer.MIN_VALUE) {
                     node.right = new TreeNode(levelOrder[i]);
                     q.offer(node.right);
                 }

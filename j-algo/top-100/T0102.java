@@ -14,8 +14,9 @@ public class T0102 {
     public static void main(String[] args) {
         T0102 t = new T0102();
 
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{3, 9, 20, -1, -1, 15, 7});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{3, 9, 20, Integer.MIN_VALUE, Integer.MIN_VALUE, 15, 7});
         assertEquals(3, t.levelOrder(root).size());
+        assertEquals(3, t.levelOrder(root).get(0).get(0));
 
         root = TreeNode.buildTreeLevelOrder(new int[]{});
         assertEquals(0, t.levelOrder(root).size());
@@ -34,6 +35,7 @@ public class T0102 {
             List<Integer> curLevelVal = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = curLevel.poll();
+                curLevelVal.add(node.val);
                 if (node.left != null) {
                     curLevel.offer(node.left);
                 }
