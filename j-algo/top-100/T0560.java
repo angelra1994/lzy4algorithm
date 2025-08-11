@@ -14,17 +14,22 @@ public class T0560 {
 
         assertEquals(2, t.subarraySum(new int[]{1, 1, 1}, 2));
         assertEquals(2, t.subarraySum(new int[]{1, 2, 3}, 3));
+        assertEquals(0, t.subarraySum(new int[]{1, 2, 3}, 0));
+        assertEquals(1, t.subarraySum(new int[]{1, 2, 2}, 5));
     }
 
     public int subarraySum(int[] nums, int k) {
         int ans = 0;
         // 创建一个map，key为前缀和，value为出现的次数
         Map<Integer, Integer> map = new HashMap<>();
+
+        // nums = [1,2,2], k = 5
         map.put(0, 1);
         int preSum = 0;
         for (int i = 0; i < nums.length; i++) {
             preSum += nums[i];
             if (map.containsKey(preSum - k)) {
+                // 存在一个位置j 满足前缀和为preSum-k
                 ans += map.get(preSum - k);
             }
             map.put(preSum, map.getOrDefault(preSum, 0) + 1);

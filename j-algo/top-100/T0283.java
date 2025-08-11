@@ -15,15 +15,16 @@ public class T0283 {
     }
 
     public void moveZeroes(int[] nums) {
-        int l = 0, r = 0, tmp = 0;
-        while (r < nums.length) {
-            if (nums[r] != 0) {
-                tmp = nums[r];
-                nums[r] = nums[l];
-                nums[l] = tmp;
-                l++;
+        // 双指针中，使用p1，p2作为追击指针。p1追p2
+        int p1 = 0, p2 = 0, tmp = 0;
+        while (p2 < nums.length) {
+            if (nums[p2] != 0) {
+                tmp = nums[p2];
+                nums[p2] = nums[p1];
+                nums[p1] = tmp;
+                p1++;
             }
-            r++;
+            p2++;
         }
     }
 

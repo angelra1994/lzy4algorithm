@@ -6,7 +6,8 @@ import java.util.Queue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * brief:
+ * brief: 199 二叉树的右视图
+ * <a href="https://leetcode.cn/problems/binary-tree-right-side-view/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-07.
  */
 public class T0199 {
@@ -26,19 +27,22 @@ public class T0199 {
         q.add(root);
 
         while (!q.isEmpty()) {
-            List<Integer> list = new ArrayList<>();
+//            List<Integer> list = new ArrayList<>();
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = q.poll();
-                list.add(node.val);
+                // list.add(node.val);
                 if (node.left != null) {
                     q.add(node.left);
                 }
                 if (node.right != null) {
                     q.add(node.right);
                 }
+                if (i == size - 1) {
+                    ans.add(node.val);
+                }
             }
-            ans.add(list.get(list.size() -1));
+//            ans.add(list.get(list.size() -1));
         }
         return ans;
     }

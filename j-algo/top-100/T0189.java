@@ -17,6 +17,7 @@ public class T0189 {
 
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
+        // 12345 -> [54][321] -> [45][123] -> 45123
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k-1);
         reverse(nums, k, nums.length - 1);
