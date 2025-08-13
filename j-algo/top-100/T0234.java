@@ -12,8 +12,8 @@ public class T0234 {
     public static void main(String[] args) {
         T0234 t = new T0234();
 
-        assertTrue(t.isPalindrome1(ListNode.build(new int[] {1,2,3,4,3,2,1})));
-        assertTrue(t.isPalindrome(ListNode.build(new int[] {1,2,3,4,3,2,1})));
+        assertTrue(t.isPalindrome1(ListNode.buildList(new int[] {1,2,3,4,3,2,1})));
+        assertTrue(t.isPalindrome(ListNode.buildList(new int[] {1,2,3,4,3,2,1})));
     }
 
     public boolean isPalindrome(ListNode head) {
@@ -31,7 +31,7 @@ public class T0234 {
         if (fast != null) {
             slow = slow.next;
         }
-        // 遍历后半截
+        // 遍历后半截，后半截的数据和stack中存的前半截数据对比
         while (slow != null) {
             if (slow.val != s.pop()) {
                 return false;

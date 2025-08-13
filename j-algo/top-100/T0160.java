@@ -10,11 +10,11 @@ public class T0160 {
 
     public static void main(String[] args) {
         T0160 t = new T0160();
-        ListNode l1 = ListNode.build(new int[]{4, 1});
-        ListNode l2 = ListNode.build(new int[]{5, 0, 1, 8});
+        ListNode l1 = ListNode.buildList(new int[]{4, 1});
+        ListNode l2 = ListNode.buildList(new int[]{5, 0, 1, 8});
         assertNull(t.getIntersectionNode1(l1, l2));
         assertNull(t.getIntersectionNode(l1, l2));
-        ListNode l3 = ListNode.build(new int[]{6, 0, 1});
+        ListNode l3 = ListNode.buildList(new int[]{6, 0, 1});
         ListNode.concat(l1, l3);
         ListNode.concat(l2, l3);
         assertEquals(6, t.getIntersectionNode1(l1, l2).val);

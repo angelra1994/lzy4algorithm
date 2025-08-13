@@ -1,14 +1,15 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * brief:
+ * brief: 206.反转链表
+ * <a href="https://leetcode.cn/problems/reverse-linked-list/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-11.
  */
 public class T0206 {
 
     public static void main(String[] args) {
         T0206 t = new T0206();
-        ListNode head = ListNode.build(new int[]{1, 2, 3, 4, 5});
+        ListNode head = ListNode.buildList(new int[]{1, 2, 3, 4, 5});
         ;
         assertEquals(5, t.reverseList(head).val);
         assertEquals(4, t.reverseList(head).next.val);
