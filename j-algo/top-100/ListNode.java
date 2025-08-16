@@ -7,6 +7,11 @@ public class ListNode {
         next = null;
     }
 
+    public ListNode(int x, ListNode next) {
+        this.val = x;
+        this.next = next;
+    }
+
     public static ListNode buildList(int[] nums) {
         if (nums == null ||  nums.length == 0) {
             return null;

@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-05.
  */
-public class T0001 {
+public class T0001_两数之和 {
     public static void main(String[] args) {
-        T0001 t = new T0001();
+        T0001_两数之和 t = new T0001_两数之和();
         int[] ans = new int[2];
         ans = t.twoSum(new int[]{2, 7, 11, 15}, 9);
         assertEquals(ans[0], 0);

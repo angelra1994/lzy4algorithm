@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-07.
  */
-public class T0283 {
+public class T0283_移动零 {
     public static void main(String[] args) {
-        T0283 t = new T0283();
+        T0283_移动零 t = new T0283_移动零();
         int[] nums = new int[]{0, 1, 0, 3, 12};
         t.moveZeroes(nums);
         assertEquals(12, nums[2]);
@@ -15,16 +15,16 @@ public class T0283 {
     }
 
     public void moveZeroes(int[] nums) {
-        // 双指针中，使用p1，p2作为追击指针。p1追p2
-        int p1 = 0, p2 = 0, tmp = 0;
-        while (p2 < nums.length) {
-            if (nums[p2] != 0) {
-                tmp = nums[p2];
-                nums[p2] = nums[p1];
-                nums[p1] = tmp;
-                p1++;
+        // 双指针中，如果快的遇到不是0的数字，就和慢指针交换位置。交换完毕后。slow移动一位
+        int slow = 0, fast = 0, tmp = 0;
+        while (fast < nums.length) {
+            if (nums[fast] != 0) {
+                tmp = nums[fast];
+                nums[fast] = nums[slow];
+                nums[slow] = tmp;
+                slow++;
             }
-            p2++;
+            fast++;
         }
     }
 
