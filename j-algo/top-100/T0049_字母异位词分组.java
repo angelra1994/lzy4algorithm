@@ -28,7 +28,7 @@ public class T0049_字母异位词分组 {
             }
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 26; i++) {
-                // 这里的 if 是可省略的，但是加上 if 以后，生成的 sb 更短，后续 groupingBy 会更快。
+                // 用字符和字符出现的频次拼接成字符串作为key
                 if (count[i] != 0) {
                     sb.append((char) ('a' + i));
                     sb.append(count[i]);

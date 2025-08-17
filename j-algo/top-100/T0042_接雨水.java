@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-05.
  */
-public class T0042 {
+public class T0042_接雨水 {
     public static void main(String[] args) {
-        T0042 t = new T0042();
+        T0042_接雨水 t = new T0042_接雨水();
 
         assertEquals(6, t.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
         assertEquals(9, t.trap(new int[]{4,2,0,3,2,5}));

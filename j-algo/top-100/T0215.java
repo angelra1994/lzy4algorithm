@@ -18,8 +18,10 @@ public class T0215 {
 
     public int findKthLargest(int[] nums, int k) {
         int r = nums.length - 1, index = partition(nums, 0, r);// partition函数返回pivot的下标
-        while (index != k - 1)
+        while (index != k - 1) {
             index = index < k - 1 ? partition(nums, index + 1, r) : partition(nums, 0, index - 1);
+        }
+
         // 根据index和k-1的大小关系确定继续处理哪一块，直到二者相等
         return nums[index];
     }
@@ -43,8 +45,6 @@ public class T0215 {
         }
         swap(nums, l, index);
         return index;
-
-
     }
 
     private void swap(int[] nums, int i, int j) {

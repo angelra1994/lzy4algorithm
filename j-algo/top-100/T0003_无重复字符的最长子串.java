@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-09.
  */
-public class T0003 {
+public class T0003_无重复字符的最长子串 {
     public static void main(String[] args) {
-        T0003 t = new T0003();
+        T0003_无重复字符的最长子串 t = new T0003_无重复字符的最长子串();
         String s = "pwwkew";
         assertEquals(3, t.lengthOfLongestSubstring(s));
     }

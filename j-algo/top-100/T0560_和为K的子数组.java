@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/subarray-sum-equals-k/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-07.
  */
-public class T0560 {
+public class T0560_和为K的子数组 {
     public static void main(String[] args) {
-        T0560 t = new T0560();
+        T0560_和为K的子数组 t = new T0560_和为K的子数组();
 
         assertEquals(2, t.subarraySum(new int[]{1, 1, 1}, 2));
         assertEquals(2, t.subarraySum(new int[]{1, 2, 3}, 3));
