@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/add-two-numbers/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-13.
  */
-public class T0002 {
+public class T0002_两数相加 {
     public static void main(String[] args) {
-        T0002 t = new T0002();
+        T0002_两数相加 t = new T0002_两数相加();
         assertEquals(7, t.addTwoNumbers(ListNode.buildList(new int[]{2, 4, 3}), ListNode.buildList(new int[]{5, 6, 4})).val);
 
     }

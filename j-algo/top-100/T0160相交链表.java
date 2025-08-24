@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * <a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-09.
  */
-public class T0160 {
+public class T0160相交链表 {
 
     public static void main(String[] args) {
-        T0160 t = new T0160();
+        T0160相交链表 t = new T0160相交链表();
         ListNode l1 = ListNode.buildList(new int[]{4, 1});
         ListNode l2 = ListNode.buildList(new int[]{5, 0, 1, 8});
         assertNull(t.getIntersectionNode1(l1, l2));

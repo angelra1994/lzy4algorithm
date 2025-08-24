@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *<a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-12.
  */
-public class T0142 {
+public class T0142_环形链表II {
     public static void main(String[] args) {
-        T0142 t = new T0142();
+        T0142_环形链表II t = new T0142_环形链表II();
 
 
         assertEquals(2, t.detectCycle1(ListNode.buildCycleList(new int[]{3, 2, 0, -4}, 1)).val);
@@ -31,13 +31,14 @@ public class T0142 {
         return null;
     }
 
+    // Floyd 判圈算法
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            // slow走了b步,，fast走了2b步。比slow多走了k圈  2b = b + kc => b = kc
-            // slow从入环口，在环中走了b-a=kc-a 到达相遇点。即slow从相遇点开始，再走a步，就可到入环口
+            // slow走了b步, fast走了2b步。比slow多走了k圈  2b = b + kc => b = kc
+            // head到入环点要走a步，slow从入环口, 在环中走了b-a=kc-a 到达相遇点。即slow从相遇点开始，再走a步，就可到入环口
             if (slow == fast) {
                 while (head != slow) { // slow再走a步，可到入环口
                     slow = slow.next;

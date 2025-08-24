@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-13.
  */
-public class T0021 {
+public class T0021_合并两个有序链表 {
 
     public static void main(String[] args) {
-        T0021 t = new T0021();
+        T0021_合并两个有序链表 t = new T0021_合并两个有序链表();
         assertEquals(0, t.mergeTwoLists(ListNode.buildList(new int[]{0, 2, 4}), ListNode.buildList(new int[]{1, 3, 4})).val);
     }
 

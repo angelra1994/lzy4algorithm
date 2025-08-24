@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-13.
  */
-public class T0019 {
+public class T0019_删除链表的倒数第N个结点 {
     public static void main(String[] args) {
-        T0019 t = new T0019();
+        T0019_删除链表的倒数第N个结点 t = new T0019_删除链表的倒数第N个结点();
         assertEquals(2, t.removeNthFromEnd(ListNode.buildList(new int[]{1, 2}), 2).val);
         assertEquals(2, t.removeNthFromEnd1(ListNode.buildList(new int[]{1, 2}), 2).val);
     }

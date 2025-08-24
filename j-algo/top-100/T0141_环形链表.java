@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <a href="https://leetcode.cn/problems/linked-list-cycle/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-12.
  */
-public class T0141 {
+public class T0141_环形链表 {
     public static void main(String[] args) {
-        T0141 t = new T0141();
+        T0141_环形链表 t = new T0141_环形链表();
         ListNode l1 = ListNode.buildCycleList(new int[]{3, 2, 0, -4}, 1);
         assertTrue(t.hasCycle(l1));
     }

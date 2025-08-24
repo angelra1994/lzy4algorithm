@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <a href="https://leetcode.cn/problems/palindrome-linked-list/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-11.
  */
-public class T0234 {
+public class T0234_回文链表 {
 
     public static void main(String[] args) {
-        T0234 t = new T0234();
+        T0234_回文链表 t = new T0234_回文链表();
 
         assertTrue(t.isPalindrome1(ListNode.buildList(new int[] {1,2,3,4,3,2,1})));
         assertTrue(t.isPalindrome(ListNode.buildList(new int[] {1,2,3,4,3,2,1})));
