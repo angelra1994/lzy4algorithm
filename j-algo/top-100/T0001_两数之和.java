@@ -22,6 +22,7 @@ public class T0001_两数之和 {
 
     public int[] twoSum(int[] nums, int target) {
         int a,b;
+        // key是value，value是index
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             a = nums[i];

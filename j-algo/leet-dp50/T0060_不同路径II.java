@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/unique-paths-ii/description/?envType=study-plan-v2&envId=dynamic-programming">...</a>
  * Created by lzy on 2025-08-03.
  */
-public class T0060 {
+public class T0060_不同路径II {
     public static void main(String[] args) {
-        T0060 t = new T0060();
+        T0060_不同路径II t = new T0060_不同路径II();
         assertEquals(2, t.uniquePathsWithObstacles(new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));
         assertEquals(1, t.uniquePathsWithObstacles(new int[][]{{0, 1}, {0, 0}}));
     }

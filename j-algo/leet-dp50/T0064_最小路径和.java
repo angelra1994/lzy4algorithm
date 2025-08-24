@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/minimum-path-sum/description/?envType=study-plan-v2&envId=dynamic-programming">...</a>
  * Created by lzy on 2025-08-04.
  */
-public class T0064 {
+public class T0064_最小路径和 {
     public static void main(String[] args) {
-        T0064 t = new T0064();
+        T0064_最小路径和 t = new T0064_最小路径和();
         assertEquals(7, t.minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
         assertEquals(12, t.minPathSum(new int[][]{{1, 2, 3}, {4, 5, 6}}));
     }

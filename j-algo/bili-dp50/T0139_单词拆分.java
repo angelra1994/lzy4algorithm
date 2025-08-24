@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <a href="https://leetcode.cn/problems/word-break/description/">...</a>
  * Created by lzy on 2025-08-03.
  */
-public class T0139 {
+public class T0139_单词拆分 {
     public static void main(String[] args) {
-        T0139 t = new T0139();
+        T0139_单词拆分 t = new T0139_单词拆分();
 
         String s = "123456";
         System.out.println("s.substring(0, 3) = " + s.substring(0, 3));

@@ -17,6 +17,7 @@ public class T0011_盛最多水的容器 {
         int r = height.length - 1;
         while (l < r) {
             ans = Math.max(ans, Math.min(height[l], height[r]) * (r - l));
+            // 左边币右边矮，向中间移动左边界
             if (height[l] < height[r]) {
                 l++;
             } else {

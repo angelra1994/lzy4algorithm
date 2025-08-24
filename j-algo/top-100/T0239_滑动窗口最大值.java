@@ -14,6 +14,9 @@ public class T0239_滑动窗口最大值 {
         assertEquals(7, ans[5]);
     }
 
+    //如果新员工比老员工强（或者一样强），把老员工裁掉。（元素进入窗口）
+    //如果老员工 35 岁了，也裁掉。（元素离开窗口）
+    //裁员后，资历最老（最左边）的人就是最强的员工了。
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         int[] ans = new int[n - k + 1];  // 有（n - k + 1）个长度为k的窗口

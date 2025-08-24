@@ -1,3 +1,4 @@
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -5,13 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <a href="https://leetcode.cn/problems/rotate-array/description/?envType=study-plan-v2&envId=top-100-liked">...</a>
  * Created by lzy on 2025-08-08.
  */
-public class T0189 {
+public class T0189_轮转数组 {
 
     public static void main(String[] args) {
-        T0189 t = new T0189();
+        T0189_轮转数组 t = new T0189_轮转数组();
         int[] nums = new int[]{1,2,3,4,5,6,7};
         t.rotate(nums, 3);
         assertEquals(5, nums[0]);
+        assertArrayEquals(new int[]{5, 6, 7, 1, 2, 3, 4}, nums);
 
     }
 
