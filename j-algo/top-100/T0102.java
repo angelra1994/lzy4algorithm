@@ -14,11 +14,11 @@ public class T0102 {
     public static void main(String[] args) {
         T0102 t = new T0102();
 
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{3, 9, 20, Integer.MIN_VALUE, Integer.MIN_VALUE, 15, 7});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"3", "9", "20", TreeNode.NULL_NODE, TreeNode.NULL_NODE, "15", "7"});
         assertEquals(3, t.levelOrder(root).size());
         assertEquals(3, t.levelOrder(root).get(0).get(0));
 
-        root = TreeNode.buildTreeLevelOrder(new int[]{});
+        root = TreeNode.buildTreeLevelOrder(new String[]{});
         assertEquals(0, t.levelOrder(root).size());
 
     }

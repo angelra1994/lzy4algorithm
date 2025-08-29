@@ -7,15 +7,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class T0543 {
     int ans = 0;
+
     public static void main(String[] args) {
         T0543 t = new T0543();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{1,2,3,4,5});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"1", "2", "3", "4", "5"});
         assertEquals(3, t.diameterOfBinaryTree(root));
 
-        root = TreeNode.buildTreeLevelOrder(new int[]{1,2});
+        root = TreeNode.buildTreeLevelOrder(new String[]{"1", "2"});
         assertEquals(1, t.diameterOfBinaryTree(root));
     }
+
     public int diameterOfBinaryTree(TreeNode root) {
+        ans = 0;
         depth(root);
         return ans;
     }

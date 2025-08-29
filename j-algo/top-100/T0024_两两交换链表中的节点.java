@@ -10,6 +10,9 @@ public class T0024_两两交换链表中的节点 {
         T0024_两两交换链表中的节点 t = new T0024_两两交换链表中的节点();
         ListNode l1 = ListNode.buildList(new int[]{1, 2, 3, 4});
         assertEquals(2, t.swapPairs(l1).val);
+
+        l1 = ListNode.buildList(new int[]{1, 2, 3, 4});
+        assertEquals(2, t.swapPairs(l1).val);
     }
 
     /**

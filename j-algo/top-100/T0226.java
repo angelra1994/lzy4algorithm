@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class T0226 {
     public static void main(String[] args) {
         T0226 t = new T0226();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{4, 2, 7, 1, 3, 6, 9});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"4", "2", "7", "1", "3", "6", "9"});
         TreeNode res = t.invertTree(root);
         assertEquals(7, res.left.val);
     }

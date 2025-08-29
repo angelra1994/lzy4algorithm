@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class T0199 {
     public static void main(String[] args) {
         T0199 t = new T0199();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{1,2,3,Integer.MIN_VALUE,5,Integer.MIN_VALUE,4});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"1", "2", "3", TreeNode.NULL_NODE, "5", TreeNode.NULL_NODE, "4"});
         assertEquals(3, t.rightSideView(root).size());
         assertEquals(3, t.rightSideView(root).get(1));
     }

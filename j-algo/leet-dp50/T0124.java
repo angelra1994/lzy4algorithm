@@ -9,13 +9,13 @@ public class T0124 {
 
     public static void main(String[] args) {
         T0124 t = new T0124();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{-10,9,20,Integer.MIN_VALUE,Integer.MIN_VALUE,15,7});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"-10", "9", "20", TreeNode.NULL_NODE, TreeNode.NULL_NODE, "15", "7"});
         assertEquals(42, t.maxPathSum(root));
-
     }
 
 
-    int sum =  Integer.MIN_VALUE;
+    int sum = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
         maxGain(root);
         return sum;

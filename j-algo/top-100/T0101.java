@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class T0101 {
     public static void main(String[] args) {
         T0101 t = new T0101();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{1, 2, 2, 3, 4, 4, 3});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"1", "2", "2", "3", "4", "4", "3"});
         assertTrue(t.isSymmetric(root));
     }
     public boolean isSymmetric(TreeNode root) {

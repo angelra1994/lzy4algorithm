@@ -14,11 +14,11 @@ public class T0103 {
 
     public static void main(String[] args) {
         T0103 t = new T0103();
-        TreeNode root = TreeNode.buildTreeLevelOrder(new int[]{3, 9, 20, Integer.MIN_VALUE, Integer.MIN_VALUE, 15, 7});
+        TreeNode root = TreeNode.buildTreeLevelOrder(new String[]{"3", "9", "20", TreeNode.NULL_NODE, TreeNode.NULL_NODE, "15", "7"});
         assertEquals(List.of(List.of(3), List.of(20, 9), List.of(15, 7)), t.zigzagLevelOrder(root));
-        root = TreeNode.buildTreeLevelOrder(new int[]{1});
+        root = TreeNode.buildTreeLevelOrder(new String[]{"1"});
         assertEquals(List.of(List.of(1)), t.zigzagLevelOrder(root));
-        root = TreeNode.buildTreeLevelOrder(new int[]{});
+        root = TreeNode.buildTreeLevelOrder(new String[]{});
         assertEquals(List.of(), t.zigzagLevelOrder(root));
     }
 
@@ -33,7 +33,7 @@ public class T0103 {
         while (!q.isEmpty()) {
             int size = q.size();
             List<Integer> list = new ArrayList();
-            for(int i=0;i<size;i++) {
+            for (int i = 0; i < size; i++) {
                 TreeNode node = q.poll();
                 if (j % 2 == 0) {
                     list.addLast(node.val);

@@ -2,6 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNode {
+    public static final String NULL_NODE = "null";
     public int val;
     public TreeNode left;
     public TreeNode right;
@@ -20,6 +21,39 @@ public class TreeNode {
     }
 
     // 满足一定条件才可以通过数组生成二叉树
+    public static TreeNode buildTreeLevelOrder(String[] levelOrder) {
+        if (levelOrder == null || levelOrder.length == 0 || NULL_NODE.equals(levelOrder[0])) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode(Integer.parseInt(levelOrder[0]));
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        int i = 1;
+        while (!q.isEmpty() && i < levelOrder.length) {
+            TreeNode node = q.poll();
+            // 处理左子节点
+            if (i < levelOrder.length) {
+                if (!NULL_NODE.equals(levelOrder[i])) {
+                    node.left = new TreeNode(Integer.parseInt(levelOrder[i]));
+                    q.offer(node.left);
+                }
+                i++;
+            }
+
+            // 处理右子节点
+            if (i < levelOrder.length) {
+                if (!NULL_NODE.equals(levelOrder[i]))
+                    node.right = new TreeNode(Integer.parseInt(levelOrder[i]));
+                q.offer(node.right);
+            }
+            i++;
+        }
+
+        return root;
+    }
+
+    // 满足一定条件才可以通过数组生成二叉树
     public static TreeNode buildTreeLevelOrder(int[] levelOrder) {
         if (levelOrder == null || levelOrder.length == 0 || levelOrder[0] == Integer.MIN_VALUE) {
             return null;
@@ -29,7 +63,7 @@ public class TreeNode {
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         int i = 1;
-        while (!q.isEmpty() && i < levelOrder.length)  {
+        while (!q.isEmpty() && i < levelOrder.length) {
             TreeNode node = q.poll();
             // 处理左子节点
             if (i < levelOrder.length) {
